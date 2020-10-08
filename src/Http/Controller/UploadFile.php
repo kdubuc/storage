@@ -57,7 +57,7 @@ final class UploadFile
         }
 
         // Le fichier n'existe pas, on le crée donc dans le filesystem
-        $this->filesystem->write($filename, $stream);
+        $this->filesystem->write($filename, $contents);
 
         // On retourne la réponse
         return (new Response())->withStatus(201)->withHeader('Location', $this->location_url."/$filename");
